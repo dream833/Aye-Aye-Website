@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./images/logo.webp" sizes="196x196" />
+    <title>aye-aye/whitepapper</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            position: relative;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-image: url(./images/wp.png);
+        }
+
+        .container {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            justify-content: center;
+            background: radial-gradient(50vw,
+                    rgba(18, 35, 165, 0.207),
+                    rgba(0, 0, 0, 0.786));
+            align-items: center;
+        }
+
+        #tito {
+            /* box-shadow: 0.5px 0.5px 4px rgb(245, 237, 237),
+                -0.5px -0.5px 4px rgb(245, 237, 237); */
+            width: 100%;
+            height: 100vw;
+            border-radius: 50%;
+            transition-property: "background";
+            transition: 0.2s;
+            transition-delay: 3s;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #tito * {
+            text-shadow: -6px -2px 12px rgb(0, 0, 2);
+            color: aliceblue;
+        }
+
+        #tito:hover {
+            position: relative;
+            top: 0;
+            border-radius: 0;
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-image: url(./images/wp.png);
+            background: radial-gradient(50vw,
+                    rgba(0, 255, 170, 0.242),
+                    rgba(0, 0, 0, 0.786));
+            /* box-shadow: 4.5px 3.5px 2px rgb(245, 237, 237),
+                -3px -2.5px 28px rgb(245, 237, 237); */
+            transition: 0.4s;
+        }
+
+        h1 {
+            font-family: "Josefin Sans", sans-serif;
+            font-size: 8vw;
+            color: aliceblue;
+        }
+
+        /*Parte del responsive*/
+        @media only screen and (max-width: 391px) and (min-height: 586px) {
+            html {
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+                position: absolute;
+            }
+
+            body {
+                display: unset;
+                position: relative;
+                right: -0vw;
+            }
+
+            #tito {
+                /* width: calc(40vh - 0em);
+                height: calc(40vh - 0em); */
+                width: 100%;
+            height: 100vw;
+            }
+
+            @media only screen and (max-width: 139px) {
+                html {
+                    background-position: unset;
+                    background-size: cover;
+                }
+
+                #tito {
+                    width: 50%;
+                    height: 10%;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="tapadera"></div>
+        <div id="tito">
+            <div class="boxti">
+            <h2>Lemuronomics</h2>
+            <br>
+            <p>
+                Buy tax 0% sell tax 0%
+            </p>
+            <br>
+            <!--This is a liquidity
+               <p> 
+                 1% liquidity
+                </p>
+                <br>
+                <p>
+                1% reflection to holders
+            </p>
+            <br>
+            <p>
+                3% marketing
+                -->
+            </p>
+        </div>
+
+        </div>
+    </div>
+</body>
+<script>
+    function reveal() {
+        var reveals = document.querySelectorAll(".rev");
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("act");
+            } else {
+                reveals[i].classList.remove("act");
+            }
+        }
+    }
+    window.addEventListener("scroll", reveal);
+
+    // To check the scroll position on page load
+    reveal();
+</script>
+
+</html>
